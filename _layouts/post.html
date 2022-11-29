@@ -16,11 +16,11 @@ layout: default
   </header>
 
   <div class="sidebar">
-    {% toc %}
+    {{ content | toc_only }}
   </div>
 
   <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
+    {{ content | inject_anchors }}
   </div>
 
   {%- if site.disqus.shortname -%}
