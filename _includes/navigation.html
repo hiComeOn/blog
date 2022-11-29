@@ -1,0 +1,13 @@
+<div class="navigation">
+  <a href="/" data-hover="首页">
+    <span>首页</span>
+  </a>
+  {%- for path in page_paths -%}
+  {%- assign my_page = site.pages | where: "path", path | first -%}
+    {%- if my_page.title -%}
+    <a class="page-link" href="{{ my_page.url | relative_url }}">
+      <span>{{ my_page.title | escape }}</span>
+    </a>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
