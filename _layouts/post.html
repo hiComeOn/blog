@@ -15,12 +15,12 @@ layout: default
       {%- endif -%}</p>
   </header>
 
-  <div class="sidebar">
-    {{ content | toc_only }}
+  <div class="table-of-contents">
+    {% toc %}
   </div>
 
   <div class="post-content e-content" itemprop="articleBody">
-    {{ content | inject_anchors }}
+    {{ content }}
   </div>
 
   {%- if site.disqus.shortname -%}
